@@ -3,6 +3,7 @@ enum ImageEnum {
   keySquare("key_square"),
   eye("eye"),
   eyeSlash("eye_slash"),
+  email("email"),
   ;
 
   final String value;
