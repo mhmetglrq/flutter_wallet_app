@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_wallet_app/config/extensions/context_extension.dart';
 import 'package:flutter_wallet_app/config/items/app_colors.dart';
+import 'package:flutter_wallet_app/config/routes/route_name.dart';
 import 'package:flutter_wallet_app/config/utility/enums/image_enum.dart';
 
 class SignIn extends StatefulWidget {
@@ -138,7 +138,7 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () =>Navigator.pushNamed(context, RouteNames.signUp),
                           child: Text(
                             " Sign Up",
                             style: context.textTheme.bodyLarge?.copyWith(
