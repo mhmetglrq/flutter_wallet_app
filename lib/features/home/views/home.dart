@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_wallet_app/config/extensions/context_extension.dart';
 import 'package:flutter_wallet_app/config/utility/enums/image_enum.dart';
+import 'package:flutter_wallet_app/features/wallet/views/wallet.dart';
 
 import '../../../config/items/app_colors.dart';
 
@@ -13,15 +14,32 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final List<Widget> _widgetOptions = <Widget>[
+    const Wallet(),
+    const Text(
+      'Index 1: Business',
+    ),
+    const Text(
+      'Index 2: School',
+    ),
+    const Text(
+      'Index 3: 3',
+    ),
+  ];
+
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const SafeArea(
-        bottom: false,
-        child: Center(
-          child: Text('Home'),
-        ),
-      ),
+      extendBody: true,
+      body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: context.dynamicWidth(0.05),
@@ -41,20 +59,48 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(ImageEnum.wallet.svgPath),
+                  onPressed: () => _onItemTapped(0),
+                  icon: SvgPicture.asset(
+                    ImageEnum.wallet.svgPath,
+                    colorFilter: ColorFilter.mode(
+                        _selectedIndex == 0
+                            ? AppColors.lightPurpleColor
+                            : AppColors.whiteColor,
+                        BlendMode.srcIn),
+                  ),
                 ),
                 IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(ImageEnum.chart.svgPath),
+                  onPressed: () => _onItemTapped(1),
+                  icon: SvgPicture.asset(
+                    ImageEnum.chart.svgPath,
+                    colorFilter: ColorFilter.mode(
+                        _selectedIndex == 1
+                            ? AppColors.lightPurpleColor
+                            : AppColors.whiteColor,
+                        BlendMode.srcIn),
+                  ),
                 ),
                 IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(ImageEnum.notification.svgPath),
+                  onPressed: () => _onItemTapped(2),
+                  icon: SvgPicture.asset(
+                    ImageEnum.notification.svgPath,
+                    colorFilter: ColorFilter.mode(
+                        _selectedIndex == 2
+                            ? AppColors.lightPurpleColor
+                            : AppColors.whiteColor,
+                        BlendMode.srcIn),
+                  ),
                 ),
                 IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(ImageEnum.settings.svgPath),
+                  onPressed: () => _onItemTapped(3),
+                  icon: SvgPicture.asset(
+                    ImageEnum.settings.svgPath,
+                    colorFilter: ColorFilter.mode(
+                        _selectedIndex == 3
+                            ? AppColors.lightPurpleColor
+                            : AppColors.whiteColor,
+                        BlendMode.srcIn),
+                  ),
                 ),
               ],
             ),
