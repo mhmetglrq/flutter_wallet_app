@@ -110,7 +110,9 @@ class _SignInState extends State<SignIn> {
               Column(
                 children: [
                   MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, RouteNames.home);
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -138,7 +140,8 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () =>Navigator.pushNamed(context, RouteNames.signUp),
+                          onTap: () =>
+                              Navigator.pushNamed(context, RouteNames.signUp),
                           child: Text(
                             " Sign Up",
                             style: context.textTheme.bodyLarge?.copyWith(

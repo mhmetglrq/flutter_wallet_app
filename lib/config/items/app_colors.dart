@@ -9,4 +9,5 @@ class AppColors {
   static const blackColor = Color(0xFF000000);
   static const lightBlueColor = Color(0xFF81C2FF);
   static const subtitleColor = Color(0xFFBDBDBD);
+  static const containerColor = Color(0xFF2F1155);
 }
