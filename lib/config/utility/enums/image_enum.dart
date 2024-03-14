@@ -4,6 +4,18 @@ enum ImageEnum {
   eye("eye"),
   eyeSlash("eye_slash"),
   email("email"),
+  chart("chart"),
+  notification("notification"),
+  payment("payment"),
+  payout("payout"),
+  settings("settings"),
+  topup("topup"),
+  transfer("transfer"),
+  wallet("wallet"),
+
+  // Add new image enum here
+  horizontalCard("horizontal_card"),
+  verticalCard("vertical_card"),
   ;
 
   final String value;
