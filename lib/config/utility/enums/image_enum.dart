@@ -16,6 +16,7 @@ enum ImageEnum {
   // Add new image enum here
   horizontalCard("horizontal_card"),
   verticalCard("vertical_card"),
+  profilePicture("profile_picture"),
   ;
 
   final String value;

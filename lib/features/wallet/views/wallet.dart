@@ -45,6 +45,9 @@ class Wallet extends StatelessWidget {
                     ),
                     CircleAvatar(
                       radius: context.dynamicWidth(0.08),
+                      backgroundImage: AssetImage(
+                        ImageEnum.profilePicture.imagePath,
+                      ),
                     )
                   ],
                 ),
@@ -143,6 +146,9 @@ class Wallet extends StatelessWidget {
                       contentPadding: EdgeInsets.zero,
                       leading: CircleAvatar(
                         radius: context.dynamicWidth(0.07),
+                        backgroundImage: AssetImage(
+                          ImageEnum.profilePicture.imagePath,
+                        ),
                       ),
                       title: Text(
                         "Ödeme",
