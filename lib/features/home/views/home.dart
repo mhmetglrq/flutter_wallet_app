@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_wallet_app/config/extensions/context_extension.dart';
 import 'package:flutter_wallet_app/config/utility/enums/image_enum.dart';
+import 'package:flutter_wallet_app/features/stats/views/stats.dart';
 import 'package:flutter_wallet_app/features/wallet/views/wallet.dart';
 
 import '../../../config/items/app_colors.dart';
@@ -16,9 +17,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final List<Widget> _widgetOptions = <Widget>[
     const Wallet(),
-    const Text(
-      'Index 1: Business',
-    ),
+    const Stats(),
     const Text(
       'Index 2: School',
     ),
