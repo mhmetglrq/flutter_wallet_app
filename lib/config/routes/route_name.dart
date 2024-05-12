@@ -4,4 +4,5 @@ class RouteNames {
   static const String home = "/home";
   static const String addCard = "/add-card";
   static const String cardDetail = "/card-detail";
+  static const String addTransaction = "/add-transaction";
 }
