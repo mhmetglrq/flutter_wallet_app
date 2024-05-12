@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_wallet_app/config/extensions/context_extension.dart';
 import 'package:flutter_wallet_app/config/utility/enums/image_enum.dart';
 

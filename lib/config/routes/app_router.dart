@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_wallet_app/config/routes/route_name.dart';
-import 'package:flutter_wallet_app/features/auth/views/sign_in.dart';
-import 'package:flutter_wallet_app/features/auth/views/sign_up.dart';
-import 'package:flutter_wallet_app/features/card/views/add_card.dart';
-import 'package:flutter_wallet_app/features/card/views/card_detail.dart';
-import 'package:flutter_wallet_app/features/home/views/home.dart';
+
+import '../../features/auth/views/sign_in.dart';
+import '../../features/auth/views/sign_up.dart';
+import '../../features/card/views/add_card.dart';
+import '../../features/card/views/card_detail.dart';
+import '../../features/home/views/home.dart';
+import '../../features/transaction/views/add_transaction.dart';
+import 'route_name.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -21,6 +23,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const AddCard());
       case RouteNames.cardDetail:
         return MaterialPageRoute(builder: (_) => const CardDetail());
+      case RouteNames.addTransaction:
+        return MaterialPageRoute(builder: (_) => const AddTransaction());
       default:
         return MaterialPageRoute(builder: (_) => const SignIn());
     }

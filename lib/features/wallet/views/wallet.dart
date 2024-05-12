@@ -211,8 +211,10 @@ class QuickMenu extends StatelessWidget {
             svgPath: ImageEnum.payout.svgPath,
           ),
           QuickMenuItem(
-            title: "Top Up",
+            title: "Income",
             svgPath: ImageEnum.topup.svgPath,
+            onTap: () =>
+                Navigator.pushNamed(context, RouteNames.addTransaction),
           ),
         ],
       ),
@@ -225,35 +227,40 @@ class QuickMenuItem extends StatelessWidget {
     super.key,
     required this.svgPath,
     required this.title,
+    this.onTap,
   });
 
   final String svgPath;
   final String title;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Padding(
-            padding: context.paddingAllLow,
-            child: SvgPicture.asset(svgPath),
-          ),
-        ),
-        Padding(
-          padding: context.paddingTopLow,
-          child: Text(
-            title,
-            style: context.textTheme.labelMedium?.copyWith(
-              color: AppColors.extraLightPurple,
-              fontSize: context.dynamicHeight(0.02),
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Padding(
+              padding: context.paddingAllLow,
+              child: SvgPicture.asset(svgPath),
             ),
           ),
-        ),
-      ],
+          Padding(
+            padding: context.paddingTopLow,
+            child: Text(
+              title,
+              style: context.textTheme.labelMedium?.copyWith(
+                color: AppColors.extraLightPurple,
+                fontSize: context.dynamicHeight(0.02),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
